@@ -1,0 +1,32 @@
+*, 
+*::before, 
+*::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  // 1rem = 10px = 10/16 = 0.625 = 62.5%
+  font-size: 62.5%
+
+  // Phone font size - Portrait tablets
+  // 8px = 8/16 = 50%
+  @include respond(tab-port)
+    font-size: 50%
+  
+  // Landscape tablets
+  // 9px = 9/16 = 56.25%
+  @include respond(tab-land)
+  font-size: 56.25%
+
+body
+  padding: 3rem
+  @include respond(tab-land)
+    padding: 0
+a
+  &:link,
+  &:visited
+    text-decoration: none
+
+input, button, input::placeholder
+  font: inherit

@@ -1,0 +1,45 @@
+@mixin abs-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+@mixin clear-fix
+  content: ""
+  display: table
+  clear: both
+
+// Media query logic
+// 0 - 600px: Phones
+// 600px - 900px: Portrait Tablets
+// 900px - 1200px: Landscape Tablets
+// 1200px - 1800px: Desktops
+// 1800px+: Big Desktops
+
+// Respond to: phone, tab-port, tab-land & desktops
+// em is media queries is always 16px = 1em == 16px
+// phone = 600px = 37.5em
+// tab-port = 900px = 56.25em
+// tab-land = 1200px -> 1800px = 75em [normal screens]
+// desktops = 1800px = 112.5em
+
+// ORDER: base, typography, general layouts (header, footer, sections...), grid, page layout, components
+
+@mixin respond($breakpoint)
+  @if $breakpoint == phone
+    @media only screen and (max-width: 37.5em)
+      @content 
+  @if $breakpoint == tab-port
+    @media only screen and (max-width: 56.25em)
+      @content 
+  @if $breakpoint == tab-land
+    @media only screen and (max-width: 75em)
+      @content 
+  @if $breakpoint == desktop
+    @media only screen and (min-width: 112.5em)
+      @content 
+@mixin respond-land-to-desktop
+  @media only screen and (min-width: 75em)
+    @content
+@mixin respond-port-to-desktop
+  @media only screen and (min-width: 56.25em)
+    @content

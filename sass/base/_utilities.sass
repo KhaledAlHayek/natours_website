@@ -1,0 +1,46 @@
+.center-text
+  text-align: center
+.mb-xsm
+  margin-bottom: 2rem
+.mb-sm
+  margin-bottom: 4rem
+  @include respond(tab-port)
+    margin-bottom: 3rem
+.mb-md
+  margin-bottom: 6rem
+  @include respond(tab-port)
+    margin-bottom: 4rem
+.mb-big
+  margin-bottom: 8rem
+  @include respond(tab-port)
+    margin-bottom: 5rem
+.mb-huge
+  margin-bottom: 10rem
+  @include respond(tab-port)
+    margin-bottom: 7rem
+.mt-xsm
+  margin-top: 2rem
+.mt-sm
+  margin-top: 4rem
+  @include respond(tab-port)
+    margin-top: 3rem
+.mt-md
+  margin-top: 6rem
+  @include respond(tab-port)
+    margin-top: 4rem
+.mt-big
+  margin-top: 8rem
+  @include respond(tab-port)
+    margin-top: 5rem
+.mt-huge
+  margin-top: 10rem
+  @include respond(tab-port)
+    margin-top: 7rem
+.rounded
+  border-radius: $rounded
+.center-text-port-and-phone
+  @media only screen and (max-width: 56.25em)
+    text-align: center
+.mb-big-tab-land-and-lower
+  @include respond(tab-land)
+    margin-bottom: 6rem

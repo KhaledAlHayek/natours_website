@@ -1,0 +1,15 @@
+.feature-box
+  background-color: rgba($color-white, .8)
+  border-radius: $main-br
+  box-shadow: 0 2rem 4rem rgba($color-black, .2)
+  text-align: center
+  padding: 2.5rem
+  transition: all $main-trans
+  &:hover
+    transform: translateY(-3rem)
+    box-shadow: 0 2rem 4rem rgba($color-black, .4)
+  &__icon
+    font-size: 6rem
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark)
+    background-clip: text
+    color: $color-trans

@@ -1,0 +1,54 @@
+body
+  line-height: 1.7
+  color: $color-dark-gray
+  font-weight: 400
+.heading-primary
+  text-transform: uppercase
+  color: $color-white
+  margin-bottom: 6rem
+  &--main
+    display: block
+    font-size: $heading-primary--main-fs
+    font-weight: $heading-primary--main-fw
+    letter-spacing: $heading-primary--main-ls
+
+    animation: moveFromLeft $trans-3 ease-in-out
+    @include respond(phone)
+      font-size: 5rem
+  &--sub
+    display: block
+    font-size: $heading-primary--sub-fs
+    font-weight: $heading-primary--sub-fw
+    letter-spacing: $heading-primary--sub-ls
+
+    animation: moveFromRight $trans-3 ease-in-out
+    @include respond(phone)
+      font-size: $fs-6
+.heading-secondary
+  display: inline-block
+  font-size: $heading-secondary-fs 
+  font-weight: $heading-secondary-fw 
+  letter-spacing: $heading-secondary-ls 
+  text-transform: uppercase
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark)
+  background-clip: text
+  -webkit-background-clip: text
+  color: transparent
+  margin-bottom: 6rem
+  transition: all $main-trans
+  &:hover
+    transform: skewX(15deg) skewY(3deg)
+    text-shadow: 0 1rem 2rem rgba($color-black, .3)
+  @include respond(phone)
+    font-size: 2.8rem
+  @include respond(tab-port)
+    margin-bottom: 3rem
+.heading-tertiary
+  font-size: $heading-tertiary-fs 
+  font-weight: $heading-tertiary-fw 
+  text-transform: uppercase
+  margin-bottom: 2rem
+.text
+  font-size: $fs-default
+  &:not(:last-child)
+    margin-bottom: 3rem

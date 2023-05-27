@@ -1,0 +1,19 @@
+.header
+  position: relative
+  height: 85vh
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)), url(../../imgs/hero-small.jpg)
+  background-size: cover
+  background-position: top
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0))
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%)
+    height: 95vh
+  &__logo-box
+    position: absolute
+    top: 4rem
+    left: 4rem
+  &__logo
+    width: 8rem
+  &__content
+    @include abs-center
+    top: 45%
+    text-align: center

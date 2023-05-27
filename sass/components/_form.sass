@@ -1,0 +1,79 @@
+.form
+  padding: 6rem 
+  width: 50%
+  @include respond(tab-land)
+    width: 60%
+  @include respond(tab-port)
+    width: 100%
+  &__group
+    position: relative
+    &:not(:last-child)
+      margin-bottom: 2.5rem
+  &__input
+    $border-bottom-thickness: 3px
+    width: 90%
+    @include respond(tab-port)
+      width: 100%
+    padding: 1.5rem 2.5rem
+    font-size: $fs-default
+    border: none
+    outline: none
+    background-color: rgba($color-white, .7)
+    border-bottom: $border-bottom-thickness solid $color-trans
+    transition: all $main-trans
+    &:focus
+      &:invalid
+        border-bottom: $border-bottom-thickness solid $error-color
+      &:valid
+        border-bottom: $border-bottom-thickness solid $color-primary
+    &:placeholder-shown
+      + .form__label
+        transform: translateY(-2rem)
+        opacity: 0
+        visibility: hidden
+  &__label
+    font-size: 1.2rem
+    font-weight: 700
+    display: block
+    margin-left: 2.5rem
+    margin-top: 0.5rem
+    transition: all $main-trans
+  &__group-radio
+    position: relative
+    display: inline-block
+    &:not(:last-child)
+      margin-right: 3rem
+  &__radio
+    // display: none
+    appearance: none
+    &::before
+      content: ""
+      width: 3.5rem
+      height: 3.5rem
+      background-color: $color-trans
+      border: 5px solid $color-primary
+      border-radius: 50%
+      position: absolute
+      top: -.3rem
+      left: 0
+    &::after
+      content: ""
+      width: 1.8rem
+      height: 1.8rem
+      background-color: $color-primary
+      border-radius: 50%
+      position: absolute
+      top: .52rem
+      left: .84rem
+      opacity: 0
+      transition: all $main-trans
+    &:checked
+      &::before,
+      &::after
+        content: ""
+      &::before
+      &::after
+        opacity: 1
+  &__radio-label
+    font-size: $fs-7
+    padding-left: 4rem
